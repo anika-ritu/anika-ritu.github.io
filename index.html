@@ -1,10 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Anika Tasnim Ritu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anika Tasnim Ritu</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 30px 24px;
+    }
+
+    header {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-top: 42px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .links a {
+      margin-right: 14px;
+      font-weight: bold;
+    }
+
+    .pub {
+      display: flex;
+      gap: 26px;
+      margin: 30px 0;
+      align-items: flex-start;
+    }
+
+    .pub img {
+      width: 300px;
+      max-height: 180px;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+      padding: 6px;
+    }
+
+    .pub-title {
+      font-size: 19px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .pub-authors {
+      margin-top: 6px;
+      font-size: 16px;
+    }
+
+    .pub-venue {
+      margin-top: 4px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .pub-links {
+      margin-top: 8px;
+    }
+
+    .pub-links a {
+      margin-right: 12px;
+      font-weight: bold;
+    }
+
+    .activity {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: 45px;
+      padding-top: 18px;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .pub {
+        flex-direction: column;
+      }
+
+      .pub img {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Anika Tasnim Ritu</h1>
-    <p>My academic website is under construction.</p>
+  <div class="container">
+
+    <header>
+      <img src="images/profile.jpg" alt="Anika Tasnim Ritu" class="profile-photo" />
+
+      <div>
+        <h1>Anika Tasnim Ritu</h1>
+        <p class="subtitle">
+          Lecturer, Department of Electrical and Electronic Engineering<br />
+          Bangladesh Army University of Engineering & Technology
+        </p>
+
+        <p>
+          Biomedical Signal Processing | Machine Learning | Explainable AI | Wearable Healthcare Technologies
+        </p>
+
+        <div class="links">
+          <a href="mailto:anika.eee16.ruet@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/anika-tasnim-ritu/" target="_blank">LinkedIn</a>
+          <a href="cv.pdf" target="_blank">CV</a>
+          <a href="https://github.com/anika-ritu" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        I am a Lecturer in the Department of Electrical and Electronic Engineering at
+        Bangladesh Army University of Engineering & Technology. My research interests include
+        biomedical signal processing, physiological signal analysis, machine learning and deep learning,
+        explainable artificial intelligence, wearable healthcare technologies, and AI-driven healthcare systems.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Biomedical Signal Processing</li>
+        <li>Physiological Signal Analysis</li>
+        <li>Machine Learning and Deep Learning for Healthcare</li>
+        <li>Explainable Artificial Intelligence</li>
+        <li>Wearable Healthcare Technologies</li>
+        <li>Computational Health Analytics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <img src="images/emg-cnn-lstm.png" alt="EMG CNN-LSTM Paper" />
+        <div>
+          <div class="pub-title">
+            Interpretable CNN-LSTM Framework for Multiclass Neuromuscular Disorder Classification Using Clinically Relevant EMG Features
+          </div>
+          <div class="pub-authors">
+            <strong>Anika Tasnim Ritu</strong>, Shahed Hossain, Md. Zahid Hasan, Sushanto Bosak, Abubokor Hanip, Touhid Bhuiyan
+          </div>
+          <div class="pub-venue">
+            IEEE Transactions on Artificial Intelligence, 2026
+          </div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1109/TAI.2025.3639453" target="_blank">Paper</a>
+            <a href="#" target="_blank">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <img src="images/ecg-lifestyle.png" alt="ECG Lifestyle Paper" />
+        <div>
+          <div class="pub-title">
+            Interpretable Lifestyle-Based Prediction of ECG-Derived Cardiovascular Phenotypes
+          </div>
+          <div class="pub-authors">
+            <strong>Anika Tasnim Ritu</strong>, Ajay Krishno Sarkar
+          </div>
+          <div class="pub-venue">
+            IEEE SPICSCON, 2026, Under Review
+          </div>
+          <div class="pub-links">
+            <a href="#" target="_blank">Paper</a>
+            <a href="#" target="_blank">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <img src="images/ecg-clustering.png" alt="ECG Clustering Paper" />
+        <div>
+          <div class="pub-title">
+            Unsupervised ECG-Lifestyle Clustering for Early Cardiovascular Phenotyping in Young Adults
+          </div>
+          <div class="pub-authors">
+            <strong>Anika Tasnim Ritu</strong>, Ajay Krishno Sarkar
+          </div>
+          <div class="pub-venue">
+            IEEE SPICSCON, 2026, Under Review
+          </div>
+          <div class="pub-links">
+            <a href="#" target="_blank">Paper</a>
+            <a href="#" target="_blank">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <img src="images/jps-hydrogen.png" alt="Journal of Power Sources Paper" />
+        <div>
+          <div class="pub-title">
+            Robust Control of Renewable-Hydrogen Electrolyzer-Buck Converter Systems Using Modified Double Integral Sliding Mode Controller for Grid Ancillary Services
+          </div>
+          <div class="pub-authors">
+            Sushanto Bosak, Md. Rashidul Islam, Md. Rafiqul Islam Sheikh,
+            <strong>Anika Tasnim Ritu</strong>, Md. Biplob Hossain, M. J. Hossain
+          </div>
+          <div class="pub-venue">
+            Journal of Power Sources, 2026
+          </div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.jpowsour.2026.239953" target="_blank">Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Research Experience</h2>
+
+      <div class="activity">
+        <h3>Remote Research Assistant</h3>
+        Health Informatics Research Laboratory, Daffodil International University<br />
+        Research Mentor: Dr. Md. Zahid Hasan
+      </div>
+
+      <div class="activity">
+        <h3>Undergraduate and Postgraduate Researcher</h3>
+        Department of Electrical and Electronic Engineering, RUET<br />
+        Research Advisor: Dr. Ajay Krishno Sarkar
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Activities</h2>
+      <ul>
+        <li>Member, IEEE</li>
+        <li>Publication Committee Member, IEEE SPICSCON 2026</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:anika.eee16.ruet@gmail.com">anika.eee16.ruet@gmail.com</a><br />
+        Google Scholar: <a href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&hl=en" target="_blank">Profile</a><br />
+        LinkedIn: <a href="https://www.linkedin.com/in/anika-tasnim-ritu/" target="_blank">Profile</a>
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Anika Tasnim Ritu. Last updated: 2026.
+    </footer>
+
+  </div>
 </body>
 </html>
