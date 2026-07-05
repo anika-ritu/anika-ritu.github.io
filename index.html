@@ -1,3 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anika Tasnim Ritu - Lecturer and researcher in biomedical signal processing, explainable AI, and multimodal AI for healthcare.">
+  <title>Anika Tasnim Ritu | Academic Website</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6877;
+      --accent: #8e2437;
+      --accent-dark: #641827;
+      --teal: #0b6670;
+      --paper: #fff;
+      --soft: #f6f7f9;
+      --line: #e2e5e9;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.65 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover, a:focus-visible { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #8e243744; outline-offset: 4px; }
+
+    .top-rule { height: 4px; background: var(--teal); }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 62px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .socials { display: flex; align-items: center; gap: 8px; }
+    .icon-link {
+      width: 34px;
+      height: 34px;
+      display: inline-grid;
+      place-items: center;
+      color: var(--ink);
+      border-radius: 7px;
+    }
+    .icon-link:hover { color: var(--accent); background: var(--soft); text-decoration: none; }
+    .icon-link svg { width: 21px; height: 21px; fill: currentColor; }
+    .nav-links { display: flex; align-items: center; gap: 25px; font-size: 14px; font-weight: 600; }
+    .nav-links a { color: var(--ink); }
+    .nav-links a:hover { color: var(--accent); }
+
+    main { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 38px;
+      align-items: center;
+      padding: 58px 0 44px;
+    }
+    .portrait {
+      width: 190px;
+      height: 235px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(23,32,51,.10);
+    }
+    .eyebrow { margin: 0 0 7px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0 0 8px; font: 700 clamp(31px, 4vw, 44px)/1.12 Georgia, "Times New Roman", serif; letter-spacing: -.02em; }
+    .role { margin: 0 0 15px; color: var(--muted); font-size: 17px; }
+    .intro { max-width: 750px; margin: 0 0 18px; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 14px; font-weight: 700; }
+    .quick-links a::after { content: " \2197"; font-weight: 400; }
+
+    section { padding: 42px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 38px; }
+    h2 { margin: 0; color: var(--accent); font: 700 26px/1.2 Georgia, "Times New Roman", serif; }
+    h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.4; }
+    p { margin: 0 0 14px; }
+    .muted, .meta { color: var(--muted); }
+    .meta { font-size: 14px; }
+    .prose { max-width: 790px; }
+
+    .interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .interests span { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--soft); font-size: 13px; }
+
+    .timeline { display: grid; gap: 22px; }
+    .timeline-item { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 18px; }
+    .date { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+    .publication-list { display: grid; gap: 0; }
+    .publication { padding: 0 0 22px; margin: 0 0 22px; border-bottom: 1px solid var(--line); }
+    .publication:last-child { margin-bottom: 0; border-bottom: 0; }
+    .pub-title { margin: 0 0 3px; font: 700 17px/1.45 Georgia, "Times New Roman", serif; }
+    .authors { margin: 0 0 3px; color: #354052; font-size: 14px; }
+    .venue { margin: 0; color: var(--accent-dark); font-size: 14px; font-weight: 700; }
+    .pub-actions { display: flex; gap: 12px; margin-top: 7px; font-size: 13px; font-weight: 800; }
+    .pub-actions a { padding: 2px 8px; border: 1px solid #b7cdd0; border-radius: 4px; }
+    .pub-actions a:hover { border-color: var(--accent); text-decoration: none; }
+    .more { margin-top: 22px; font-weight: 700; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .card { padding: 19px 20px; background: var(--soft); border: 1px solid var(--line); border-radius: 9px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 780px) {
+      .nav { width: min(100% - 28px, var(--max)); min-height: 58px; }
+      .nav-links { gap: 13px; }
+      .nav-links a:nth-child(4) { display: none; }
+      main { width: min(100% - 30px, var(--max)); }
+      .hero { grid-template-columns: 150px 1fr; gap: 24px; padding-top: 38px; }
+      .portrait { width: 150px; height: 190px; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .socials .optional { display: none; }
+      .nav-links a:nth-child(2) { display: none; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
+      .portrait { margin: auto; }
+      .quick-links, .interests { justify-content: center; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-rule"></div>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="socials" aria-label="Contact and academic profiles">
+        <a class="icon-link" href="mailto:anikatasnim@bauet.ac.bd" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/anika-tasnim-ritu/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3.3V21h3.2V8.5ZM4.9 3A1.9 1.9 0 1 0 5 6.8 1.9 1.9 0 0 0 4.9 3ZM21 13.8c0-3.8-2-5.6-4.7-5.6a4 4 0 0 0-3.6 2v-1.7H9.5V21h3.2v-6.2c0-1.6.3-3.2 2.3-3.2s2.7 1.8 2.7 3.3V21H21v-7.2Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 6-10 6L2 8l10-6Zm-6 9.7V16c0 2.2 2.7 4 6 4s6-1.8 6-4v-4.3l-6 3.6-6-3.6Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://github.com/anika-ritu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.3-2.3-.3-4.6-1.1-4.6-5A3.9 3.9 0 0 1 6.8 9c-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1.1a9.6 9.6 0 0 1 5.1 0c1.9-1.4 2.8-1.1 2.8-1.1.6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.8V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a class="icon-link optional" href="https://orcid.org/0009-0009-7367-4712" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.7 17.2H7.2V9h1.5v8.2ZM8 7.9a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm4.9 9.3h-2.6V6h2.6c4.1 0 6.4 2.2 6.4 5.6 0 3.5-2.3 5.6-6.4 5.6Zm.1-9.8h-1.1v8.4H13c3.1 0 4.7-1.5 4.7-4.2 0-2.6-1.6-4.2-4.7-4.2Z"/></svg>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <img class="portrait" src="https://anika-ritu.github.io/profile.PNG" alt="Portrait of Anika Tasnim Ritu">
+      <div>
+        <p class="eyebrow">Electrical &amp; Electronic Engineering</p>
+        <h1>Anika Tasnim Ritu</h1>
+        <p class="role">Lecturer, Department of EEE, Bangladesh Army University of Engineering &amp; Technology</p>
+        <p class="intro">I am a lecturer and researcher working at the intersection of biomedical signal processing and trustworthy artificial intelligence. My work focuses on interpretable, clinically relevant learning systems for physiological signals, medical imaging, and wearable healthcare.</p>
+        <div class="quick-links">
+          <a href="mailto:anikatasnim@bauet.ac.bd">Email</a>
+          <a href="cv.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
+          <a href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <h2>Research</h2>
+        <div class="prose">
+          <p>My research develops data-driven healthcare methods that remain interpretable to researchers and clinicians. I am especially interested in physiological signal analysis, multimodal learning, visual explainability, and efficient models for wearable and embedded systems.</p>
+          <div class="interests" aria-label="Research interests">
+            <span>Biomedical signal processing</span><span>Explainable AI</span><span>Multimodal AI</span><span>Medical image analysis</span><span>Wearable healthcare</span><span>Computational health</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <h2>Selected Publications</h2>
+        <div>
+          <div class="publication-list">
+            <article class="publication">
+              <p class="pub-title">Interpretable CNN-LSTM Framework for Multiclass Neuromuscular Disorder Classification Using Clinically Relevant EMG Features</p>
+              <p class="authors"><strong>Anika Tasnim Ritu</strong>, S. Hossain, M. Z. Hasan, S. Bosak, A. Hanip, and T. Bhuiyan</p>
+              <p class="venue">IEEE Transactions on Artificial Intelligence, 2026</p>
+              <div class="pub-actions"><a href="https://doi.org/10.1109/TAI.2025.3639453" target="_blank" rel="noopener">Paper</a></div>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Robust Control of Renewable-Hydrogen Electrolyzer-Buck Converter Systems Using Modified Double Integral Sliding Mode Controller for Grid Ancillary Services</p>
+              <p class="authors">S. Bosak, M. R. Islam, M. R. I. Sheikh, <strong>Anika Tasnim Ritu</strong>, M. B. Hossain, and M. J. Hossain</p>
+              <p class="venue">Journal of Power Sources, 2026</p>
+              <div class="pub-actions"><a href="https://doi.org/10.1016/j.jpowsour.2026.239953" target="_blank" rel="noopener">Paper</a></div>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Statistical Analysis of Physical Activity's Impact on Cardiovascular Health Using ECG and Lifestyle Metrics</p>
+              <p class="authors"><strong>Anika Tasnim Ritu</strong>, A. K. Sarkar, and S. Bosak</p>
+              <p class="venue">IEEE ECCE, 2025</p>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Comparative Analysis of Microcontrollers in Wearable Devices for Real-Time Arrhythmia Classification: An Embedded Machine Learning Approach</p>
+              <p class="authors">H. U. Rahman, <strong>Anika Tasnim Ritu</strong>, H. J. Rasha, and M. S. Anower</p>
+              <p class="venue">IEEE ICEEICT, 2024</p>
+            </article>
+          </div>
+          <p class="more"><a href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&amp;hl=en" target="_blank" rel="noopener">View all publications on Google Scholar \2192</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item"><div class="date">Jul 2023 - Present</div><div><h3>Lecturer, Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore</p></div></div>
+          <div class="timeline-item"><div class="date">Apr 2025 - Present</div><div><h3>Remote Research Assistant</h3><p class="meta">Health Informatics Research Laboratory, Daffodil International University</p></div></div>
+          <div class="timeline-item"><div class="date">Jan 2021 - Jan 2026</div><div><h3>Undergraduate and Postgraduate Researcher</h3><p class="meta">Department of EEE, Rajshahi University of Engineering &amp; Technology</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <h2>Education</h2>
+        <div class="two-col">
+          <div class="card"><h3>M.Sc. in Electrical &amp; Electronic Engineering</h3><p>Rajshahi University of Engineering &amp; Technology</p><p class="meta">2023 - 2026 &middot; CGPA 4.00/4.00</p></div>
+          <div class="card"><h3>B.Sc. in Electrical &amp; Electronic Engineering</h3><p>Rajshahi University of Engineering &amp; Technology</p><p class="meta">2017 - 2022 &middot; CGPA 3.90/4.00 &middot; Rank 3/123</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-head">
+        <h2>Recognition</h2>
+        <div class="prose"><h3>Government Merit-based Scholarship (4x)</h3><p class="meta">Ministry of Education, Bangladesh</p><p>Awarded across four national public examinations, including Talent Pool distinctions and board rankings of 7th, 13th, and 18th.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>&copy; 2026 Anika Tasnim Ritu</span><span>Last updated July 2026</span></footer>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
