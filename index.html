@@ -81,12 +81,9 @@
       border: 1px solid var(--line);
       box-shadow: 0 12px 28px rgba(23,32,51,.10);
     }
-    .eyebrow { margin: 0 0 7px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     h1 { margin: 0 0 8px; font: 700 clamp(31px, 4vw, 44px)/1.12 Georgia, "Times New Roman", serif; letter-spacing: -.02em; }
     .role { margin: 0 0 15px; color: var(--muted); font-size: 17px; }
     .intro { max-width: 750px; margin: 0 0 18px; }
-    .quick-links { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 14px; font-weight: 700; }
-    .quick-links a::after { content: " \2197"; font-weight: 400; }
 
     section { padding: 42px 0; border-top: 1px solid var(--line); }
     .section-head { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 38px; }
@@ -103,6 +100,13 @@
     .timeline { display: grid; gap: 22px; }
     .timeline-item { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 18px; }
     .date { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .subsection-title { margin: 4px 0 18px; color: var(--ink); font: 700 18px/1.3 Georgia, "Times New Roman", serif; }
+    .subsection-title:not(:first-child) { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .education-list, .course-list, .plain-list { display: grid; gap: 20px; }
+    .education-item { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 18px; }
+    .education-item p, .course-list p { margin-bottom: 2px; }
+    .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 30px; }
+    .skill-group p { margin: 0; color: var(--muted); font-size: 14px; }
 
     .publication-list { display: grid; gap: 0; }
     .publication { padding: 0 0 22px; margin: 0 0 22px; border-bottom: 1px solid var(--line); }
@@ -143,11 +147,16 @@
     }
     @media (max-width: 560px) {
       .socials .optional { display: none; }
-      .nav-links a:nth-child(2) { display: none; }
+      .nav { gap: 12px; }
+      .nav-links { gap: 12px; }
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(5),
+      .nav-links a:nth-child(6) { display: none; }
       .hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
       .portrait { margin: auto; }
-      .quick-links, .interests { justify-content: center; }
-      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      .interests { justify-content: center; }
+      .timeline-item, .education-item { grid-template-columns: 1fr; gap: 4px; }
+      .skill-groups { grid-template-columns: 1fr; }
       footer { flex-direction: column; }
     }
   </style>
@@ -178,6 +187,8 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#activities">Activities</a>
         <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
       </div>
     </nav>
@@ -187,15 +198,9 @@
     <section class="hero" id="about">
       <img class="portrait" src="https://anika-ritu.github.io/profile.PNG" alt="Portrait of Anika Tasnim Ritu">
       <div>
-        <p class="eyebrow">Electrical &amp; Electronic Engineering</p>
         <h1>Anika Tasnim Ritu</h1>
         <p class="role">Lecturer, Department of EEE, Bangladesh Army University of Engineering &amp; Technology</p>
         <p class="intro">I am a lecturer and researcher working at the intersection of biomedical signal processing and trustworthy artificial intelligence. My work focuses on interpretable, clinically relevant learning systems for physiological signals, medical imaging, and wearable healthcare.</p>
-        <div class="quick-links">
-          <a href="mailto:anikatasnim@bauet.ac.bd">Email</a>
-          <a href="cv.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
-          <a href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        </div>
       </div>
     </section>
 
@@ -213,37 +218,89 @@
 
     <section id="publications">
       <div class="section-head">
-        <h2>Selected Publications</h2>
+        <h2>Publications</h2>
         <div>
+          <h3 class="subsection-title">Journal Articles</h3>
           <div class="publication-list">
             <article class="publication">
               <p class="pub-title">Interpretable CNN-LSTM Framework for Multiclass Neuromuscular Disorder Classification Using Clinically Relevant EMG Features</p>
-              <p class="authors"><strong>Anika Tasnim Ritu</strong>, S. Hossain, M. Z. Hasan, S. Bosak, A. Hanip, and T. Bhuiyan</p>
-              <p class="venue">IEEE Transactions on Artificial Intelligence, 2026</p>
-              <div class="pub-actions"><a href="https://doi.org/10.1109/TAI.2025.3639453
-        
-        IF: NA NA NA" target="_blank" rel="noopener">Paper</a></div>
+              <p class="authors"><strong>A. T. Ritu</strong>, S. Hossain, M. Z. Hasan, S. Bosak, A. Hanip, and T. Bhuiyan</p>
+              <p class="venue">IEEE Transactions on Artificial Intelligence, vol. 7, no. 6, pp. 3383-3398, 2026</p>
+              <div class="pub-actions"><a href="https://doi.org/10.1109/TAI.2025.3639453" target="_blank" rel="noopener">Paper</a><a href="https://github.com/anika-ritu?tab=repositories" target="_blank" rel="noopener">Code</a></div>
             </article>
             <article class="publication">
               <p class="pub-title">Robust Control of Renewable-Hydrogen Electrolyzer-Buck Converter Systems Using Modified Double Integral Sliding Mode Controller for Grid Ancillary Services</p>
-              <p class="authors">S. Bosak, M. R. Islam, M. R. I. Sheikh, <strong>Anika Tasnim Ritu</strong>, M. B. Hossain, and M. J. Hossain</p>
-              <p class="venue">Journal of Power Sources, 2026</p>
-              <div class="pub-actions"><a href="https://doi.org/10.1016/j.jpowsour.2026.239953
-        
-        IF: 7.9 Q1 B3" target="_blank" rel="noopener">Paper</a></div>
+              <p class="authors">S. Bosak, M. R. Islam, M. R. I. Sheikh, <strong>A. T. Ritu</strong>, M. B. Hossain, and M. J. Hossain</p>
+              <p class="venue">Journal of Power Sources, vol. 677, p. 239953, 2026</p>
+              <div class="pub-actions"><a href="https://doi.org/10.1016/j.jpowsour.2026.239953" target="_blank" rel="noopener">Paper</a></div>
+            </article>
+          </div>
+
+          <h3 class="subsection-title">Journal Manuscripts Under Review</h3>
+          <div class="publication-list">
+            <article class="publication">
+              <p class="pub-title">EDNet-20: Enhancing Multi-Label Ocular Disease Detection through Deep Learning Optimization</p>
+              <p class="authors">S. Hossain, M. M. Sayeb, T. A. Patwary, M. Mehenaj, <strong>A. T. Ritu</strong>, M. M. Rahman, M. Z. Hasan, J. Mumin, S. Ahmmed, and O. Jaman</p>
+              <p class="venue">Submitted to Discover Artificial Intelligence</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=EDNet-20+Enhancing+Multi-Label+Ocular+Disease+Detection+through+Deep+Learning+Optimization" target="_blank" rel="noopener">Paper</a></div>
             </article>
             <article class="publication">
+              <p class="pub-title">GWO-RMF: A Meta-Heuristic Residual Manifold Framework for Interpretable Neuromuscular Disorder Classification Using Clinically Relevant EMG Features</p>
+              <p class="authors">M. Z. Hasan, R. Ibrahim, A. Fariha, N. Sakib, S. T. Jahan, M. Momtaj, M. A. Rahman, <strong>A. T. Ritu</strong>, S. Hossain, and A. Moustafa</p>
+              <p class="venue">Submitted to Applied Computational Intelligence and Soft Computing (Wiley)</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=GWO-RMF+Meta-Heuristic+Residual+Manifold+Framework" target="_blank" rel="noopener">Paper</a></div>
+            </article>
+          </div>
+
+          <h3 class="subsection-title">Conference Papers</h3>
+          <div class="publication-list">
+            <article class="publication">
               <p class="pub-title">Statistical Analysis of Physical Activity's Impact on Cardiovascular Health Using ECG and Lifestyle Metrics</p>
-              <p class="authors"><strong>Anika Tasnim Ritu</strong>, A. K. Sarkar, and S. Bosak</p>
-              <p class="venue">IEEE ECCE, 2025</p>
+              <p class="authors"><strong>A. T. Ritu</strong>, A. K. Sarkar, and S. Bosak</p>
+              <p class="venue">2025 4th International Conference on Electrical, Computer and Communication Engineering (ECCE), pp. 1-6, 2025</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Statistical+Analysis+of+Physical+Activity%27s+Impact+on+Cardiovascular+Health+Using+ECG+and+Lifestyle+Metrics" target="_blank" rel="noopener">Paper</a><a href="https://github.com/anika-ritu?tab=repositories" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Assessing the Relationship between Bodily Biological Parameters and Cardiac States of Different Subjects</p>
+              <p class="authors"><strong>A. T. Ritu</strong>, A. K. Sarkar, and S. Bosak</p>
+              <p class="venue">2024 3rd International Conference on Advancement in Electrical and Electronic Engineering (ICAEEE), pp. 1-6, 2024</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Assessing+the+Relationship+between+Bodily+Biological+Parameters+and+Cardiac+States+of+Different+Subjects" target="_blank" rel="noopener">Paper</a><a href="https://github.com/anika-ritu?tab=repositories" target="_blank" rel="noopener">Code</a></div>
             </article>
             <article class="publication">
               <p class="pub-title">Comparative Analysis of Microcontrollers in Wearable Devices for Real-Time Arrhythmia Classification: An Embedded Machine Learning Approach</p>
-              <p class="authors">H. U. Rahman, <strong>Anika Tasnim Ritu</strong>, H. J. Rasha, and M. S. Anower</p>
-              <p class="venue">IEEE ICEEICT, 2024</p>
+              <p class="authors">H. U. Rahman, <strong>A. T. Ritu</strong>, H. J. Rasha, and M. S. Anower</p>
+              <p class="venue">2024 6th International Conference on Electrical Engineering and Information &amp; Communication Technology (ICEEICT), pp. 1327-1331, 2024</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Comparative+Analysis+of+Microcontrollers+in+Wearable+Devices+for+Real-Time+Arrhythmia+Classification" target="_blank" rel="noopener">Paper</a></div>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Detection of Neuromuscular Disorders from EMG Signals: A Machine Learning Approach</p>
+              <p class="authors">M. S. Sorkar, M. M. Rahman, and <strong>A. T. Ritu</strong></p>
+              <p class="venue">2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence &amp; Networking (QPAIN), pp. 1-6, 2026</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Detection+of+Neuromuscular+Disorders+from+EMG+Signals+A+Machine+Learning+Approach" target="_blank" rel="noopener">Paper</a></div>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Touchless IoT-Based Health Monitoring System for Elderly and Maternal Healthcare Applications with Real-Time Cloud Integration</p>
+              <p class="authors">M. T. Nabi, M. N. Hasan, <strong>A. T. Ritu</strong>, J. Jumana, and I. Z. Netto</p>
+              <p class="venue">International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure, 2026 (Accepted)</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Touchless+IoT-Based+Health+Monitoring+System+for+Elderly+and+Maternal+Healthcare+Applications" target="_blank" rel="noopener">Paper</a></div>
             </article>
           </div>
-          <p class="more"><a href="https://scholar.google.com/citations?user=vV4l_o4AAAAJ&amp;hl=en" target="_blank" rel="noopener">View all publications on Google Scholar \2192</a></p>
+
+          <h3 class="subsection-title">Conference Manuscripts Under Review</h3>
+          <div class="publication-list">
+            <article class="publication">
+              <p class="pub-title">Interpretable Lifestyle-Based Prediction of ECG-Derived Cardiovascular Phenotypes</p>
+              <p class="authors"><strong>A. T. Ritu</strong> and A. K. Sarkar</p>
+              <p class="venue">Submitted to IEEE SPICSCON, 2026</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Interpretable+Lifestyle-Based+Prediction+of+ECG-Derived+Cardiovascular+Phenotypes" target="_blank" rel="noopener">Paper</a><a href="https://github.com/anika-ritu?tab=repositories" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Unsupervised ECG-Lifestyle Clustering for Early Cardiovascular Phenotyping in Young Adults</p>
+              <p class="authors"><strong>A. T. Ritu</strong> and A. K. Sarkar</p>
+              <p class="venue">Submitted to IEEE SPICSCON, 2026</p>
+              <div class="pub-actions"><a href="https://scholar.google.com/scholar?q=Unsupervised+ECG-Lifestyle+Clustering+for+Early+Cardiovascular+Phenotyping+in+Young+Adults" target="_blank" rel="noopener">Paper</a><a href="https://github.com/anika-ritu?tab=repositories" target="_blank" rel="noopener">Code</a></div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -251,10 +308,17 @@
     <section id="experience">
       <div class="section-head">
         <h2>Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item"><div class="date">Jul 2023 - Present</div><div><h3>Lecturer, Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore</p></div></div>
-          <div class="timeline-item"><div class="date">Apr 2025 - Present</div><div><h3>Remote Research Assistant</h3><p class="meta">Health Informatics Research Laboratory, Daffodil International University</p></div></div>
-          <div class="timeline-item"><div class="date">Jan 2021 - Jan 2026</div><div><h3>Undergraduate and Postgraduate Researcher</h3><p class="meta">Department of EEE, Rajshahi University of Engineering &amp; Technology</p></div></div>
+        <div>
+          <h3 class="subsection-title">Teaching Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item"><div class="date">Jul 2023 - Present</div><div><h3>Lecturer, Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore, Bangladesh</p></div></div>
+            <div class="timeline-item"><div class="date">Mar 2023 - May 2023</div><div><h3>Lecturer (Contractual), Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore, Bangladesh</p></div></div>
+          </div>
+          <h3 class="subsection-title">Research Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item"><div class="date">Apr 2025 - Present</div><div><h3>Remote Research Assistant</h3><p class="meta">Health Informatics Research Laboratory, Daffodil International University</p><p>Research mentor: Dr. Md. Zahid Hasan</p></div></div>
+            <div class="timeline-item"><div class="date">Jan 2021 - Jan 2026</div><div><h3>Undergraduate and Postgraduate Researcher</h3><p class="meta">Department of EEE, Rajshahi University of Engineering &amp; Technology</p><p>Research advisor: Dr. Ajay Krishno Sarkar</p></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -262,9 +326,45 @@
     <section id="education">
       <div class="section-head">
         <h2>Education</h2>
-        <div class="two-col">
-          <div class="card"><h3>M.Sc. in Electrical &amp; Electronic Engineering</h3><p>Rajshahi University of Engineering &amp; Technology</p><p class="meta">2023 - 2026 &middot; CGPA 4.00/4.00</p></div>
-          <div class="card"><h3>B.Sc. in Electrical &amp; Electronic Engineering</h3><p>Rajshahi University of Engineering &amp; Technology</p><p class="meta">2017 - 2022 &middot; CGPA 3.90/4.00 &middot; Rank 3/123</p></div>
+        <div class="education-list">
+          <div class="education-item"><div class="date">2023 - 2026</div><div><h3>M.Sc. in Electrical &amp; Electronic Engineering</h3><p>Rajshahi University of Engineering &amp; Technology (RUET)</p><p class="meta">CGPA: 4.00/4.00</p></div></div>
+          <div class="education-item"><div class="date">2017 - 2022</div><div><h3>B.Sc. in Electrical &amp; Electronic Engineering</h3><p>Rajshahi University of Engineering &amp; Technology (RUET)</p><p class="meta">CGPA: 3.90/4.00 &middot; 3rd position (Rank 3/123)</p></div></div>
+          <div class="education-item"><div class="date">2014 - 2016</div><div><h3>Higher Secondary Certificate (H.S.C.), Science</h3><p>Cantonment Public School &amp; College, Rangpur</p><p class="meta">GPA: 5.00/5.00 &middot; Placed 7th in Dinajpur Board</p></div></div>
+          <div class="education-item"><div class="date">2012 - 2014</div><div><h3>Secondary School Certificate (S.S.C.), Science</h3><p>Dinajpur Government Girls' High School</p><p class="meta">GPA: 5.00/5.00 &middot; Placed 13th in Dinajpur Board</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <div class="skill-groups">
+          <div class="skill-group"><h3>Programming</h3><p>Python, MATLAB, C/C++</p></div>
+          <div class="skill-group"><h3>Machine Learning &amp; Deep Learning</h3><p>PyTorch, TensorFlow, Keras, Scikit-learn, NumPy, Pandas, Explainable AI</p></div>
+          <div class="skill-group"><h3>Simulation</h3><p>MATLAB/Simulink, Proteus, Multisim</p></div>
+          <div class="skill-group"><h3>Hardware</h3><p>Arduino, STM32, Raspberry Pi, IoT devices and sensors</p></div>
+          <div class="skill-group"><h3>Research Tools</h3><p>LaTeX, Microsoft Office, Git, GitHub, Microsoft Visio, Draw.io, EndNote</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="training">
+      <div class="section-head">
+        <h2>Certificates &amp; Training</h2>
+        <div class="course-list">
+          <div class="education-item"><div class="date">Coursera</div><div><h3>Supervised Machine Learning: Regression and Classification</h3><p class="meta">DeepLearning.AI &middot; Machine Learning Specialization</p></div></div>
+          <div class="education-item"><div class="date">Coursera</div><div><h3>Advanced Learning Algorithms</h3><p class="meta">DeepLearning.AI &middot; Machine Learning Specialization</p></div></div>
+          <div class="education-item"><div class="date">Coursera</div><div><h3>Unsupervised Learning, Recommenders, Reinforcement Learning</h3><p class="meta">DeepLearning.AI &middot; Machine Learning Specialization</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="section-head">
+        <h2>Professional Activities</h2>
+        <div class="plain-list">
+          <div><h3>Publication Committee Member</h3><p class="meta">IEEE International Conference on Signal Processing, Information, Communication and Systems (SPICSCON), 2026</p></div>
+          <div><h3>Student Member</h3><p class="meta">Institute of Electrical and Electronics Engineers (IEEE)</p></div>
         </div>
       </div>
     </section>
@@ -280,6 +380,3 @@
   <footer><span>&copy; 2026 Anika Tasnim Ritu</span><span>Last updated July 2026</span></footer>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
