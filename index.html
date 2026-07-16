@@ -102,9 +102,11 @@
 
     .timeline { display: grid; gap: 22px; }
     .timeline-item { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 18px; }
-    .experience-details { margin: 12px 0 0; padding-left: 20px; }
-    .experience-details li { margin-bottom: 10px; line-height: 1.62; text-align: justify; text-justify: inter-word; hyphens: auto; }
-    .experience-details li:last-child { margin-bottom: 0; }
+    .research-projects { display: grid; gap: 22px; margin-top: 20px; }
+    .research-project { padding-top: 18px; border-top: 1px solid var(--line); }
+    .research-project h4 { margin: 0 0 5px; font: 700 17px/1.4 "Source Serif 4", Georgia, "Times New Roman", serif; }
+    .project-context { margin: 0 0 8px; color: var(--accent-dark); font-size: 14px; }
+    .project-description { margin: 0; line-height: 1.68; text-align: justify; text-justify: inter-word; hyphens: auto; }
     .date { color: var(--muted); font-size: 13px; font-weight: 700; }
     .subsection-title { margin: 4px 0 18px; color: var(--ink); font: 700 18px/1.3 "Source Serif 4", Georgia, "Times New Roman", serif; }
     .subsection-title:not(:first-child) { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
@@ -144,7 +146,8 @@
     @media (max-width: 780px) {
       .nav { width: min(100% - 28px, var(--max)); min-height: 58px; }
       .nav-links { gap: 13px; }
-      .nav-links a:nth-child(4) { display: none; }
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(5) { display: none; }
       main { width: min(100% - 30px, var(--max)); }
       .hero { grid-template-columns: 150px 1fr; gap: 24px; padding-top: 38px; }
       .portrait { width: 150px; height: 190px; }
@@ -157,7 +160,8 @@
       .nav-links { gap: 12px; }
       .nav-links a:nth-child(2),
       .nav-links a:nth-child(5),
-      .nav-links a:nth-child(6) { display: none; }
+      .nav-links a:nth-child(6),
+      .nav-links a:nth-child(7) { display: none; }
       .hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
       .portrait { margin: auto; }
       .interests { justify-content: center; }
@@ -192,7 +196,8 @@
         <a href="#about">About</a>
         <a href="#research">Research Interests</a>
         <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
+        <a href="#research-experience">Research Experience</a>
+        <a href="#professional-experience">Professional Experience</a>
         <a href="#education">Education</a>
         <a href="#activities">Activities</a>
         <a href="Anika_CV%20(11).pdf" target="_blank" rel="noopener">CV</a>
@@ -320,33 +325,65 @@
       </div>
     </section>
 
-    <section id="experience">
+    <section id="research-experience">
       <div class="section-head">
-        <h2>Experience</h2>
-        <div>
-          <h3 class="subsection-title">Teaching Experience</h3>
-          <div class="timeline">
-            <div class="timeline-item"><div class="date">Jul 2023 - Present</div><div><h3>Lecturer, Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore, Bangladesh</p></div></div>
-            <div class="timeline-item"><div class="date">Mar 2023 - May 2023</div><div><h3>Lecturer (Contractual), Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore, Bangladesh</p></div></div>
-          </div>
-          <h3 class="subsection-title">Research Experience</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="date">Apr 2025 - Present</div>
-              <div>
-                <h3>Remote Research Assistant</h3>
-                <p class="meta">Health Informatics Research Laboratory, Daffodil International University</p>
-                <p>Research mentor: Dr. Md. Zahid Hasan</p>
-                <ul class="experience-details">
-                  <li><strong>Interpretable neuromuscular disorder classification using EMG (first-author work, IEEE Transactions on Artificial Intelligence):</strong> Led the complete development of a CNN&ndash;LSTM framework, including EMG preprocessing, feature selection, model design, external validation, and explainability analysis, achieving 95.83% accuracy and 98.61% AUC.</li>
-                  <li><strong>Residual-manifold EMG classification (collaborative work):</strong> Developed an interpretable framework combining Isomap-based manifold learning with GWO-optimized XGBoost, achieving 95.83% accuracy with a median inference time of 0.71 ms.</li>
-                  <li><strong>Domain-adaptive retinal disease screening (collaborative work):</strong> Implemented software and performed formal analysis for a CNN&ndash;Swin Transformer framework using CycleGAN- and DANN-based domain adaptation, improving cross-domain accuracy by 13.42%.</li>
-                  <li><strong>Multi-label ocular disease detection (collaborative work):</strong> Contributed to data curation, methodology, and software development for EDNet-20, which achieved 94.26% accuracy on public data and 91.80% on an independent private dataset.</li>
-                </ul>
+        <h2>Research Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="date">April 2025 &ndash; Present</div>
+            <div>
+              <h3>Remote Research Assistant</h3>
+              <p class="meta"><strong>Health Informatics Research Laboratory, Daffodil International University</strong></p>
+              <p>Research mentor: Dr. Md. Zahid Hasan</p>
+              <div class="research-projects">
+                <article class="research-project">
+                  <h4>Interpretable Neuromuscular Disorder Classification Using EMG</h4>
+                  <p class="project-context"><em>First-author research published in IEEE Transactions on Artificial Intelligence</em></p>
+                  <p class="project-description">Led the end-to-end development of an interpretable CNN&ndash;LSTM framework for classifying healthy, myopathic, and neuropathic subjects from EMG signals. The study involved EMG preprocessing, clinically guided feature selection, model design and training, external validation, and explainability analysis using SHAP, PFI, PDP, and LIME. I also collected, prepared, and assessed the quality of a private surface-EMG cohort for cross-modality validation. Evaluated across the Mendeley, EMGLAB, and private sEMG datasets, the framework achieved 95.83% accuracy and 98.61% AUC.</p>
+                </article>
+                <article class="research-project">
+                  <h4>Residual-Manifold Learning for Interpretable EMG Classification</h4>
+                  <p class="project-context"><em>Collaborative research</em></p>
+                  <p class="project-description">Contributed to GWO-RMF, an efficient framework that combines Isomap-based nonlinear manifold learning with an XGBoost classifier optimized using the Grey Wolf Optimizer. My work included methodological development, implementation, experimental evaluation, interpretation of the learned feature space, and computational-efficiency analysis. The framework was evaluated across intramuscular and surface-EMG cohorts, achieving 95.83% accuracy with a median inference time of 0.71 ms.</p>
+                </article>
+                <article class="research-project">
+                  <h4>Domain-Adaptive Retinal Disease Screening</h4>
+                  <p class="project-context"><em>Collaborative research</em></p>
+                  <p class="project-description">Contributed to the implementation and evaluation of a hybrid CNN&ndash;Swin Transformer framework for retinal disease screening across different clinical imaging environments. The framework combines CycleGAN-based image harmonization with Domain-Adversarial Neural Network feature alignment to reduce performance degradation caused by domain shifts. I implemented software components, conducted analytical experiments, and contributed to formal analysis and manuscript preparation. The approach improved cross-domain classification accuracy by 13.42%.</p>
+                </article>
+                <article class="research-project">
+                  <h4>Multi-Label Ocular Disease Detection</h4>
+                  <p class="project-context"><em>Collaborative research</em></p>
+                  <p class="project-description">Contributed to the development of EDNet-20, an optimized convolutional neural network for detecting eight ocular diseases from color fundus images. My work included data curation, methodology development, software implementation, experimental evaluation, and manuscript preparation. The framework was validated on both public and independently collected private datasets, achieving 94.26% accuracy on the public dataset and 91.80% on the private dataset.</p>
+                </article>
               </div>
             </div>
-            <div class="timeline-item"><div class="date">Jan 2021 - Jan 2026</div><div><h3>Undergraduate and Postgraduate Researcher</h3><p class="meta">Department of EEE, Rajshahi University of Engineering &amp; Technology</p><p>Research advisor: Dr. Ajay Krishno Sarkar</p></div></div>
           </div>
+          <div class="timeline-item">
+            <div class="date">January 2021 &ndash; January 2026</div>
+            <div>
+              <h3>Undergraduate and Postgraduate Researcher</h3>
+              <p class="meta"><strong>Department of Electrical and Electronic Engineering, Rajshahi University of Engineering &amp; Technology (RUET)</strong></p>
+              <p>Research advisor: Dr. Ajay Krishno Sarkar</p>
+              <div class="research-projects">
+                <article class="research-project">
+                  <h4>ECG&ndash;Lifestyle Analysis for Cardiovascular Phenotyping</h4>
+                  <p class="project-context"><em>M.Sc. thesis: &ldquo;The Impact of Lifestyle Factors on Cardiovascular Health among Young Adults&rdquo;</em></p>
+                  <p class="project-description">Investigated associations between lifestyle behavior and cardiovascular function by collecting 60-second resting ECG recordings and lifestyle measurements from 56 young adults. The study combined ECG-derived heart-rate variability, morphological, and interval features with physical activity, BMI, dietary behavior, and sleep quality. The work included signal preprocessing, feature extraction, statistical analysis, interpretable prediction, and unsupervised clustering. The clustering analysis identified two physiologically meaningful cardiovascular profiles: Active&ndash;Normal and Sedentary&ndash;Overweight.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="professional-experience">
+      <div class="section-head">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item"><div class="date">Jul 2023 - Present</div><div><h3>Lecturer, Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore, Bangladesh</p></div></div>
+          <div class="timeline-item"><div class="date">Mar 2023 - May 2023</div><div><h3>Lecturer (Contractual), Department of Electrical and Electronic Engineering</h3><p class="meta">Bangladesh Army University of Engineering &amp; Technology, Natore, Bangladesh</p></div></div>
         </div>
       </div>
     </section>
