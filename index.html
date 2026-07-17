@@ -107,6 +107,8 @@
     .research-project h4 { margin: 0 0 5px; font: 700 17px/1.4 "Source Serif 4", Georgia, "Times New Roman", serif; }
     .project-context { margin: 0 0 8px; color: var(--accent-dark); font-size: 14px; }
     .project-description { margin: 0; line-height: 1.68; text-align: justify; text-justify: inter-word; hyphens: auto; }
+    .project-description p { margin-bottom: 14px; }
+    .project-description p:last-child { margin-bottom: 0; }
     .teaching-description { line-height: 1.68; text-align: justify; text-justify: inter-word; hyphens: auto; }
     .teaching-description p:last-child { margin-bottom: 0; }
     .date { color: var(--muted); font-size: 13px; font-weight: 700; }
@@ -340,8 +342,11 @@
               <div class="research-projects">
                 <article class="research-project">
                   <h4>Interpretable Neuromuscular Disorder Classification Using EMG</h4>
-                  <p class="project-context"><em>First-author research published in IEEE Transactions on Artificial Intelligence</em></p>
-                  <p class="project-description">Led the end-to-end development of an interpretable CNN&ndash;LSTM framework for classifying healthy, myopathic, and neuropathic subjects from EMG signals. The study involved EMG preprocessing, clinically guided feature selection, model design and training, external validation, and explainability analysis using SHAP, PFI, PDP, and LIME. I also collected, prepared, and assessed the quality of a private surface-EMG cohort for cross-modality validation. Evaluated across the Mendeley, EMGLAB, and private sEMG datasets, the framework achieved 95.83% accuracy and 98.61% AUC.</p>
+                  <p class="project-context"><em>First-author research published in</em> <strong><em>IEEE Transactions on Artificial Intelligence</em></strong></p>
+                  <div class="project-description">
+                    <p>I led the end-to-end development of an interpretable deep-learning framework for multiclass neuromuscular disorder classification using electromyography (EMG) signals. I designed a <strong>domain-guided feature-engineering pipeline</strong> combining three statistical selection techniques with clinically relevant EMG descriptors, developed a hybrid <strong>CNN&ndash;LSTM architecture</strong> to capture spatial patterns and temporal dynamics, and incorporated <strong>SHAP, PDP, PFI, and LIME</strong> to provide global and instance-level explanations. To our knowledge, this work is <strong>among the first to apply a comprehensive suite of explainable AI techniques to multiclass NMD classification using clinically curated EMG features</strong>.</p>
+                    <p>The framework was developed and extensively evaluated on the <strong>Mendeley intramuscular EMG (iEMG) dataset</strong>, followed by <strong>cross-population validation on EMGLAB</strong> and <strong>external cross-modality validation using a private surface EMG (sEMG) cohort</strong>, which I collected, preprocessed, and assessed for signal quality. It consistently outperformed state-of-the-art ML and DL baselines across multiple feature subsets, achieving <strong>95.83% classification accuracy</strong>, <strong>98.61% multiclass AUC</strong>, and a <strong>59.56 ms median inference time per sample</strong>. I also developed a <strong>proof-of-concept real-time diagnostic application</strong> to demonstrate the framework&rsquo;s interpretability and feasibility for resource-constrained healthcare settings.</p>
+                  </div>
                 </article>
                 <article class="research-project">
                   <h4>Residual-Manifold Learning for Interpretable EMG Classification</h4>
